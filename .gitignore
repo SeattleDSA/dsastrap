@@ -13,3 +13,10 @@ dist-product
 npm-debug.log
 
 /vendor/
+src/sass/assets/understrap/.DS_Store
+src/sass/assets/bootstrap4/.DS_Store
+src/sass/assets/bootstrap5/.DS_Store
+src/sass/assets/.DS_Store
+src/sass/.DS_Store
+src/.DS_Store
+.DS_Store

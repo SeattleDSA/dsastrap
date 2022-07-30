@@ -57,6 +57,16 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
+  --dsa-red: #EC1F27;
+  --dsa-red-tint1: #F04C53;
+  --dsa-red-tint2: #F4797E;
+  --dsa-red-tint3: #F7A5A9;
+  --dsa-red-tint4: #FBD2D4;
+  --dsa-black: #231F20;
+  --dsa-black-tint1: #3B3838;
+  --dsa-black-tint2: #605C5C;
+  --dsa-black-tint3: #8C8989;
+  --dsa-black-tint4: #C1C0BF;
 }
 
 *,
@@ -15963,6 +15973,19 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
 .wpcf7 .wpcf7-validation-errors {
   color: theme-color("danger");
   border: 1px solid #e9ecef;
+}
+
+#wrapper-footer-full, #wrapper-static-hero {
+  background-color: var(--dsa-red);
+  color: #FFF;
+}
+
+#wrapper-footer-full a, #wrapper-static-hero a {
+  color: #FFF;
+}
+
+.bg-primary {
+  background-color: var(--dsa-red);
 }
 
 /*# sourceMappingURL=child-theme.css.map */
