@@ -14539,7 +14539,7 @@ figure.woocommerce-product-gallery__wrapper {
   background-color: #EC1F27;
   color: #fff;
   border-radius: 10%;
-  border: 1px transparent;
+  border: 2px transparent;
 }
 
 .wp-block-button:hover .wp-block-button__link, .wp-block-button .wp-block-button__link:active, .wp-block-search__button:hover {
@@ -14547,7 +14547,7 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 .is-style-outline > :where(.wp-block-button__link), :where(.wp-block-button__link).is-style-outline {
-  border-color: #EC1F27;
+  border: 2px solid #EC1F27;
 }
 
 .wp-block-button.is-style-outline:hover .wp-block-button__link, .wp-block-button.is-style-outline .wp-block-button__link:active {
@@ -14562,6 +14562,46 @@ figure.woocommerce-product-gallery__wrapper {
 
 .widget-area > .widget {
   margin: 0 0 2rem 0;
+}
+
+/* Action Network 4 Wordpress Customizations */
+.actionnetwork-calendar-title {
+  font-weight: bold;
+}
+
+.actionnetwork-calendar-item {
+  border-bottom: 1px solid #000;
+}
+
+.actionnetwork-calendar-item > a {
+  display: flex;
+}
+
+.actionnetwork-calendar-date {
+  flex: 1 auto;
+  flex-grow: 1;
+}
+
+.actionnetwork-calendar-title {
+  flex: 1 auto;
+  flex-grow: 2;
+}
+
+.actionnetwork-calendar-dateMonth {
+  text-align: center;
+}
+
+.actionnetwork-calendar-dateNumber {
+  font-weight: bold;
+  text-align: center;
+}
+
+.actionnetwork-calendar-dateName {
+  text-align: center;
+}
+
+.actionnetwork-calendar-dateStarTime {
+  text-align: center;
 }
 
 .has-blue-color,
