@@ -1,0 +1,29 @@
+#page #wrapper-footer-full, #page .site #wrapper-static-hero, .wp-block-button__link {
+	background-color: $dsa-red;
+	color: #FFF;
+}
+
+#page #wrapper-footer-full a, #page #wrapper-static-hero a {
+	color: #FFF;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: #ffffff;
+}
+
+.home .entry-title {
+	display: none;
+}
+
+.wp-block-button__link {
+	background-color: $dsa-red;
+	color: #FFF;
+}
+
+.is-style-outline>:where(.wp-block-button__link), :where(.wp-block-button__link).is-style-outline {
+	border-color: $dsa-red;
+}
+
+wp-block-latest-posts__featured-image > img {
+	border-radius: 10% 10% 0 0;
+}

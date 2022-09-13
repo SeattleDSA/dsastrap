@@ -1,15 +1,4 @@
 @charset "UTF-8";
-#wrapper-footer-full,
-#wrapper-static-hero {
-  background-color: #EC1F27;
-  color: #FFF;
-}
-
-#wrapper-footer-full a,
-#wrapper-static-hero a {
-  color: #FFF;
-}
-
 *,
 *::before,
 *::after {
@@ -397,10 +386,6 @@ legend + * {
 
 ::-webkit-color-swatch-wrapper {
   padding: 0;
-}
-
-::-webkit-file-upload-button {
-  font: inherit;
 }
 
 ::file-selector-button {
