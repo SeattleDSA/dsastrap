@@ -14528,7 +14528,7 @@ figure.woocommerce-product-gallery__wrapper {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: #ffffff;
+  color: #fff;
 }
 
 .home .entry-title {
@@ -14537,14 +14537,24 @@ figure.woocommerce-product-gallery__wrapper {
 
 .wp-block-button__link {
   background-color: #EC1F27;
-  color: #FFF;
+  color: #666;
+}
+
+.wp-block-button:hover .wp-block-button__link, .wp-block-button .wp-block-button__link:active {
+  background-color: #FCB24D;
 }
 
 .is-style-outline > :where(.wp-block-button__link), :where(.wp-block-button__link).is-style-outline {
   border-color: #EC1F27;
 }
 
-wp-block-latest-posts__featured-image > img {
+.wp-block-button.is-style-outline:hover .wp-block-button__link, .wp-block-button.is-style-outline .wp-block-button__link:active {
+  border-color: #FCB24D;
+  background-color: #FCB24D;
+  color: #FFF;
+}
+
+.wp-block-latest-posts__featured-image > img {
   border-radius: 10% 10% 0 0;
 }
 
