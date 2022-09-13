@@ -14535,12 +14535,14 @@ figure.woocommerce-product-gallery__wrapper {
   display: none;
 }
 
-.wp-block-button__link {
+.wp-block-button__link, .wp-block-search__button {
   background-color: #EC1F27;
-  color: #666;
+  color: #fff;
+  border-radius: 10%;
+  border: 1px transparent;
 }
 
-.wp-block-button:hover .wp-block-button__link, .wp-block-button .wp-block-button__link:active {
+.wp-block-button:hover .wp-block-button__link, .wp-block-button .wp-block-button__link:active, .wp-block-search__button:hover {
   background-color: #FCB24D;
 }
 
@@ -14556,6 +14558,10 @@ figure.woocommerce-product-gallery__wrapper {
 
 .wp-block-latest-posts__featured-image > img {
   border-radius: 10% 10% 0 0;
+}
+
+.widget-area > .widget {
+  margin: 0 0 2rem 0;
 }
 
 .has-blue-color,
