@@ -14573,34 +14573,39 @@ figure.woocommerce-product-gallery__wrapper {
   border-bottom: 1px solid #000;
 }
 
-.actionnetwork-calendar-item > a {
+.actionnetwork-calendar-item {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
 }
 
 .actionnetwork-calendar-date {
-  flex: 1 auto;
-  flex-grow: 1;
+  order: 0;
+  flex: 1 1 33%;
+  align-self: auto;
 }
 
-.actionnetwork-calendar-title {
-  flex: 1 auto;
-  flex-grow: 2;
-}
-
-.actionnetwork-calendar-dateMonth {
-  text-align: center;
+.actionnetwork-calendar-details {
+  order: 1;
+  flex: 2 2 66%;
+  align-self: auto;
+  align-items: center;
 }
 
 .actionnetwork-calendar-dateNumber {
   font-weight: bold;
   text-align: center;
+  font-size: 2rem;
 }
 
-.actionnetwork-calendar-dateName {
+.actionnetwork-calendar-dateNameMonth {
   text-align: center;
 }
 
-.actionnetwork-calendar-dateStarTime {
+.actionnetwork-calendar-dateStartTime {
   text-align: center;
 }
 
