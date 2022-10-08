@@ -14609,6 +14609,22 @@ figure.woocommerce-product-gallery__wrapper {
   text-align: center;
 }
 
+.bg-dsa-yellow {
+  background: #FCB24D;
+}
+
+.bg-dsa-taupe {
+  background: #F8F3EF;
+}
+
+.bg-dsa-red {
+  background: #EC1F27;
+}
+
+.alertmessage-wrapper > p {
+  margin: 0;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

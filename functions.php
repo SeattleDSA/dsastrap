@@ -56,8 +56,6 @@ function add_child_theme_textdomain() {
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
-
-
 /**
  * Overrides the theme_mod to default to Bootstrap 5
  *
@@ -71,8 +69,6 @@ function understrap_default_bootstrap_version( $current_mod ) {
 	return 'bootstrap5';
 }
 add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20 );
-
-
 
 /**
  * Loads javascript for showing customizer warning dialog.
