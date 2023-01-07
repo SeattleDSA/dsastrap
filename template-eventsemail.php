@@ -7,13 +7,8 @@ Template Name: Event List (for Email)
 ?>
 
 <?php get_header(); ?>
-	<div id="content" class="grid-x grid-margin-x grid-margin-y grid-container">
+	<div id="content" class="container">
 
-		
-		<a class="clipboard-copy" for="copyMe">
-      Copy
-      <span class="notice" hidden>Copied!</span>
-    </a>
 		<style>
 			footer, .footer, #non-printable {
 				display: none !important;
@@ -56,86 +51,121 @@ Template Name: Event List (for Email)
 			}
 		</style><!-- Hide Header/Footer -->
 		
-		<div class="cell large-12 small-12">
+		<div class="cell col-md-12">
 			<h1><span class="icon-calendar"></span> <?php the_title(); ?></h1>
 			<?php the_content( 'Continue reading ' . get_the_title() ); ?>
 			<hr />
-			<p>Here are upcoming events:</p>
 		</div>
-		<div class="cell large-12 small-12">
-		<?php // Retrieve the next 5 upcoming events
-			if(in_array('the-events-calendar/the-events-calendar.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
-				//plugin is activated
+		<div class="cell col-md-12">
+			<h3>Code Block</h3>
+			<?php // Retrieve the next week worth of events
+				if(in_array('the-events-calendar/the-events-calendar.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
+					//plugin is activated
 
-				$events = tribe_get_events( array(
-				    'posts_per_page' => 20,
-				    'start_date' => date( 'Y-m-d H:i:s', strtotime("-6 hours")),
-				    'end_date' => date( 'Y-m-d H:i:s', strtotime("+1 week")),
-				    'tax_query'=> array(
-	                	array(
-		                    'taxonomy' => 'tribe_events_cat',
-		                    'field' => 'slug',
-		                    'terms' => 'new-member'
-	               		)
-	                )
-				) );
-				
-				function empty_content($str) {
-					    return trim(str_replace('&nbsp;','',strip_tags($str))) == '';
-				}
-					echo "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" id=\"copyMe\" class=\"templateColumns\">";
-					// Loop through the events, displaying the title
-					// and content for each
-					foreach ( $events as $event ) {
-						$dsa_event_description_raw = $event->post_content;
-						$dsa_event_description = sanitize_text_field( $dsa_event_description_raw );
-						$excerpt_length = 400;
-						$title = $event->post_title;
-
-						echo "<tr style=\"border-bottom: 1px solid #202020;\"><td align=\"center\" valign=\"middle\" width=\"15%\" style=\"text-align: center; vertical-align: middle;\">";
-
-						echo "<span class=\"dsa-event-textmonth\">" . tribe_get_start_date( $event->ID, $display_time = false, $date_format = "M" ) . "</span><br>";
-
-						echo "<span class=\"dsa-event-numericday\" style=\"font-size: 2rem; font-weight:bold;\">" . tribe_get_start_date( $event->ID, $display_time = false, $date_format = "j" ) . "</span><br>";
-
-						echo "<span class=\"dsa-event-textday\">" . tribe_get_start_date( $event->ID, $display_time = false, $date_format = "D" ) . "</span><br>";
-
-					    echo "</td><td align=\"left\" valign=\"middle\" width=\"84%\" style=\"vertical-align: middle; text-align: left;\">";
-					    echo "<span class=\"dsa-event-time\">" . tribe_get_start_time( $event->ID ) . " - " . tribe_get_end_time( $event->ID ) . "</span><br>";
-					    echo "<h3><a href=\"" . tribe_get_event_link( $event->ID, $full_link=false) . "\">". $title . "</a></h3>";
-						
-						echo "<span class=\"dsa-event-location\"><strong>" . tribe_get_venue ( $event->ID, $link = false ) . "</strong></span> <span class=\"dsa-event-city\">" . tribe_get_city ($event->ID, $link = false);
-
-					    echo "</span></tr>";
+					$events = tribe_get_events( array(
+					    'posts_per_page' => 20,
+					    'start_date' => date( 'Y-m-d H:i:s', strtotime("-6 hours")),
+					    'end_date' => date( 'Y-m-d H:i:s', strtotime("+1 week")),
+					    'tax_query'=> array(
+		                	array(
+			                    'taxonomy' => 'tribe_events_cat',
+			                    'field' => 'slug',
+			                    'terms' => 'new-member'
+		               		)
+		                )
+					) );
+					
+					function empty_content($str) {
+						    return trim(str_replace('&nbsp;','',strip_tags($str))) == '';
 					}
-					echo "</table>";
-				}
-				else {
-					echo "<div>This template uses The Events Calendar plugin. Please install.</div>";
-				}
-		?>
+						echo "<pre><code class=\"language-html\">&lt;table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"600\" id=\"copyMe\" class=\"templateColumns\"&gt;";
+						// Loop through the events, displaying the title
+						// and content for each
+						foreach ( $events as $event ) {
+							$title = $event->post_title;
+
+							echo "&lt;tr style=\"border-bottom: 1px solid #202020;\"&gt;&lt;td align=\"center\" valign=\"middle\" width=\"15%\" style=\"text-align: center; vertical-align: middle;\"&gt;";
+
+							echo "&lt;span class=\"dsa-event-textmonth\"&gt;" . tribe_get_start_date( $event->ID, $display_time = false, $date_format = "M" ) . "&lt;/span&gt;&lt;br&gt;";
+
+							echo "&lt;span class=\"dsa-event-numericday\" style=\"font-size: 2rem; font-weight:bold;\"&gt;" . tribe_get_start_date( $event->ID, $display_time = false, $date_format = "j" ) . "&lt;/span&gt;&lt;br&gt;";
+
+							echo "&lt;span class=\"dsa-event-textday\"&gt;" . tribe_get_start_date( $event->ID, $display_time = false, $date_format = "D" ) . "&lt;/span&gt;&lt;br&gt;";
+
+						    echo "&lt;/td&gt;&lt;td align=\"left\" valign=\"middle\" width=\"84%\" style=\"vertical-align: middle; text-align: left;\"&gt;";
+						    echo "&lt;span class=\"dsa-event-time\"&gt;" . tribe_get_start_time( $event->ID ) . " - " . tribe_get_end_time( $event->ID ) . "&lt;/span&gt;&lt;br&gt;";
+						    echo "&lt;h3&gt;&lt;a href=\"" . tribe_get_event_link( $event->ID, $full_link=false) . "\"&gt". $title . "&lt;/a&gt&lt;/h3&gt;";
+							
+							echo "&lt;span class=\"dsa-event-location\"&gt;&lt;strong&gt;" . tribe_get_venue ( $event->ID, $link = false ) . "&lt;/strong&gt;&lt;/span&gt; &lt;span class=\"dsa-event-city\"&gt;" . tribe_get_city ($event->ID, $link = false);
+
+						    echo "&lt;/span&gt;&lt;/tr&gt;";
+						}
+						echo "&lt;/table&gt;</code></pre>";
+					}
+					else {
+						echo "<div>This template uses The Events Calendar plugin. Please install.</div>";
+					}
+			?>
 		</div>
 	</div> <!-- end #content -->
 
 	 <style>
-      .clipboard-copy {
-        -webkit-appearance: button;
-        -moz-appearance: button;
-        padding: 0.2em 0.6em;
-        font: 11px system-ui, sans-serif;
-        display: inline-block;
-        cursor: default;
-      }
-      .textarea { margin-top: 30px; display: block; }
+			*, *:before, *:after {
+			  box-sizing: border-box;
+			}
+
+			pre {
+				white-space: pre-wrap;
+			}
+
+			pre[class*="language-"] {
+			  position:relative;
+			  overflow: auto;
+			  margin:5px 0;
+			  padding:1.75rem 0 1.75rem 1rem;
+			  border-radius:10px;
+			}
+
+			pre button {
+			    position: absolute;
+			    font-size: .9rem;
+			    margin: 0.5rem;
+			    background-color: #ec1f27;
+			    color: #fff;
+			    border: ridge 1px #ec1f27;
+			    border-radius: 5px;
+			    position: absolute;
+			}
     </style>
-    <script>
-      document.addEventListener('a', function(event) {
-        const notice = event.target.querySelector('.notice')
-        notice.hidden = false
-        setTimeout(function() {
-          notice.hidden = true
-        }, 1000)
-      })
+    <script type="text/javascript">
+      const copyButtonLabel = "Copy Code";
+
+			// you can use a class selector instead if you, or the syntax highlighting library adds one to the 'pre'. 
+			let blocks = document.querySelectorAll("pre");
+
+			blocks.forEach((block) => {
+			  // only add button if browser supports Clipboard API
+			  if (navigator.clipboard) {
+			    let button = document.createElement("button");
+			    button.innerText = copyButtonLabel;
+			    button.addEventListener("click", copyCode);
+			    block.appendChild(button);
+			  }
+			});
+
+			async function copyCode(event) {
+			  const button = event.srcElement;
+			  const pre = button.parentElement;
+			  let code = pre.querySelector("code");
+			  let text = code.innerText;
+			  await navigator.clipboard.writeText(text);
+			  
+			  button.innerText = "Code Copied";
+			  
+			  setTimeout(()=> {
+			    button.innerText = copyButtonLabel;
+			  },1000)
+			}
     </script>
 
 <?php get_footer(); ?>
